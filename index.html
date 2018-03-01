@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>img-to-ascii</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <input type="file" name="img"/>
-  <canvas id="preview"></canvas>
-  <pre id="ascii"></pre>
+  <div class="container">
+    <canvas id="preview"></canvas>
+    <pre id="ascii" class="container__img--ascii"></pre>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>

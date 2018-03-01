@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.container__img--ascii {
+  font-size: 8px;
+}

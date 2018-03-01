@@ -67,7 +67,7 @@ const drawAscii = (grayScales, width) => {
 };
 
 const MAXIMUM_WIDTH = 80;
-const MAXIMUM_HEIGHT = 50;
+const MAXIMUM_HEIGHT = 80;
 
 const clampDimensions = (width, height) => {
   const rectifiedWidth = Math.floor(getFontRatio() * width);
