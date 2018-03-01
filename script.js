@@ -13,7 +13,8 @@ fileInput.onchange = (e) => {
   reader.onload = (ev) => {
     const image = new Image();
     image.onload = () => {
-      const [width, height] = [image.width, image.height];
+      // const [width, height] = [image.width, image.height];
+      const [width, height] = clampDimensions(image.width, image.height);
 
       canvas.width = width;
       canvas.height = height;
@@ -64,3 +65,20 @@ const drawAscii = (grayScales, width) => {
 
   asciiImage.textContent = ascii;
 };
+
+const MAXIMUM_WIDTH = 80;
+const MAXIMUM_HEIGHT = 50;
+
+const clampDimensions = (width, height) => {
+  if (height > MAXIMUM_HEIGHT) {
+    const reducedWidth = Math.floor(width * MAXIMUM_HEIGHT / height);
+    return [reducedWidth, MAXIMUM_HEIGHT];
+  }
+
+  if (width > MAXIMUM_WIDTH) {
+    const reducedHeight = Math.floor(width * MAXIMUM_WIDTH / width);
+    return [MAXIMUM_WIDTH, reducedWidth];
+  }
+
+  return [width, height];
+}
